@@ -11,7 +11,6 @@ import static java.util.stream.Collectors.joining;
 import static java.util.stream.Collectors.toList;
 
 
-
 class Result {
 
     /*
@@ -25,32 +24,37 @@ class Result {
 
     public static int getTotalX(List<Integer> a, List<Integer> b) {
     // Write your code here
-        int start=a.get(a.size()-1);
-    int end = a.get(0);
-    System.out.println(a.size());
+    int start=a.get(a.size()-1);
+    int end = b.get(0);
     
-    List<Integer> arr = new ArrayList<>();
-    List<Integer> factors = new ArrayList<>();
-    for(int i=start;i<end+1;i++){
+    
+    List<Integer> arr = new ArrayList<Integer>();
+    List<Integer> factors = new ArrayList<Integer>();
+    for(int i=start+1;i<end+1;i++){
         arr.add(i);
     }
     
+    
     for(int x:arr){
+        
         for(int y:a){
-            System.out.println(y);
+            
             if(x%y!=0){
-                System.out.println(y);
+                
                 break;
             }
-            System.out.println(y);
-            System.out.println(a.size()-1);
+            // System.out.println(y);
+            // System.out.println(a.size());
             if(y==a.get(a.size()-1)){
-                System.out.println(y);
+                
                 factors.add(x);
             }
             
         }
         
+    }
+    for(int x : factors){
+        System.out.println(x);
     }
     for(int fac : factors){
         for(int y: b){
@@ -58,9 +62,9 @@ class Result {
                 factors.remove(Integer.valueOf(y));
                 break;
             }
-            System.out.println(y);
+           
             if(y==b.get(b.size()-1)){
-                System.out.println(y);
+                
                 return factors.size();
             }
         }
@@ -70,7 +74,6 @@ class Result {
     }
 
     }
-
 
 
 public class Solution {
