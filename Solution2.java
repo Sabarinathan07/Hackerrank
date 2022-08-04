@@ -28,24 +28,39 @@ class Result {
     }
     String str1 = s.substring(0,s.length()/2);
     String str2 = s.substring(s.length()/2,s.length());
-    System.out.println(str1+".  "+str2);
+    // System.out.println(str1+".  "+str2);
     char[] ch1 = str1.toCharArray();
     char[] ch2 = str2.toCharArray();
     Arrays.sort(ch1);
     Arrays.sort(ch2);
+   
     int count=0;
     int k=0;
     for(int i=0; i<ch1.length;i++){
         for(int j=0;j<ch2.length;j++){
+            // System.out.println(ch1[i]+".  "+ch2[j]);
+
             if(ch1[i]==ch2[j]){
-                ch2[j]='0';
+                            System.out.println(ch1[i]+".  "+ch2[j]);
+                ch2[j]='@';
                 k=j;
                 break;
+            }else if(j==ch2.length-1){
+                count++;
             }
         }
-        if(ch1[i]!=ch2[k]){
-            count++;
-        }
+        
+        // while(ch1[i]!=ch2[k]){
+        //     if(k==ch1.length-1){
+        //         count++;
+        //     }
+        //     k++;
+        // }
+        
+        // if(ch1[i]!=ch2[k]){
+        //     ch2[k]='@';
+        //     count++;
+        // }
         
     }
     
